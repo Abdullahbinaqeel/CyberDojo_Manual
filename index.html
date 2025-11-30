@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Dojo - Pre-Lab Manual</title>
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --text-color: #00ff41;
+            --header-color: #008f11;
+            --border-color: #003b00;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            box-shadow: 0 0 10px var(--header-color);
+            position: relative;
+        }
+
+        /* Scanline effect */
+        .container::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--header-color);
+            text-transform: uppercase;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            text-shadow: 0 0 5px var(--header-color);
+        }
+
+        ul {
+            list-style-type: square;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        code {
+            background-color: #002200;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        .blink {
+            animation: blinker 1s linear infinite;
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.8em;
+            color: #005500;
+        }
+
+        a {
+            color: #00ff41;
+            text-decoration: none;
+            border-bottom: 1px dotted #00ff41;
+        }
+
+        a:hover {
+            background-color: #00ff41;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Cyber Dojo <span class="blink">_</span></h1>
+        <p style="text-align: center;">Pre-Lab Preparation Manual</p>
+
+        <h2>// Introduction</h2>
+        <p>Target acquired. This manual is your briefing for the upcoming Cyber Dojo CTF assessment. The mission details
+            are classified, but this guide provides the necessary intelligence to prepare your arsenal.</p>
+
+        <h2>// Prerequisites & Knowledge Base</h2>
+
+        <h3>1. Web Application Security</h3>
+        <ul>
+            <li><strong>OWASP Top 10</strong>: Master the common vulnerabilities.</li>
+            <li><strong>Injection Flaws</strong>: SQLi - understand how to manipulate queries.</li>
+            <li><strong>XSS</strong>: Stored vs. Reflected. Know how to execute scripts in a victim's browser.</li>
+            <li><strong>Broken Access Control & CSRF</strong>: Session hijacking and request forgery.</li>
+        </ul>
+
+        <h3>2. Network Security</h3>
+        <ul>
+            <li><strong>Protocols</strong>: TCP/IP, HTTP, FTP.</li>
+            <li><strong>Packet Analysis</strong>: Reading raw traffic (PCAP). Identifying cleartext credentials.</li>
+        </ul>
+
+        <h3>3. System Security & Cryptography</h3>
+        <ul>
+            <li><strong>Memory Management</strong>: Stack, heap, and buffer overflows (C language).</li>
+            <li><strong>Cryptography</strong>: RSA (primes, modulus, exponents). Weak key implementation.</li>
+            <li><strong>Password Security</strong>: Hashing (MD5, SHA) and cracking techniques (john, hashcat).</li>
+        </ul>
+
+        <h3>4. Scripting & Automation</h3>
+        <ul>
+            <li><strong>Python</strong>: Automating attacks and simulating malware.</li>
+            <li><strong>Linux CLI</strong>: Navigation, compilation, and file management.</li>
+        </ul>
+
+        <h2>// Required Tools</h2>
+        <ul>
+            <li><code>Python 3</code></li>
+            <li><code>Wireshark</code> or <code>tcpdump</code></li>
+            <li><code>GCC</code> (Compiler)</li>
+            <li>Text Editor/IDE (VS Code, Vim)</li>
+            <li>Browser with DevTools</li>
+        </ul>
+
+        <h2>// General Advice</h2>
+        <ul>
+            <li>Think like an attacker. What does the system <em>not</em> prevent?</li>
+            <li>Sanitize inputs? Try to break them.</li>
+            <li>Read error messages. They leak intel.</li>
+            <li><strong>RTFM</strong>.</li>
+        </ul>
+
+        <div class="footer">
+            &copy; Cyber Dojo Operations. <br>
+            <span class="blink">System Ready.</span>
+        </div>
+    </div>
+</body>
+
+</html>
